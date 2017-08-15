@@ -18,11 +18,11 @@ The following frontend views/routes are available to the user:
 + `/radio/<rc-api-svc.config.stations.station.uri>`
 shows the data for the radio station specified. The name/URI of the radio station matches the one in the configuration of the API service. 
 The frontend is not able to detect whether the provided name/URI of the radio station is valid or not; it waits for the response code of the request to the API service. If `200 OK` is returned by the API service, the radio station exists and the data can be visualized by the frontend, if a `400 Bad Request` is returned the station does not exist and the frontend redirects back to the start page. 
-2. `/about/wtf`
++ `/about/wtf`
 description of the RadioChecker.com project
-3. `/about/impressum`
++ `/about/impressum`
 legal information and imprint
-4. `/about/datenschutz`
++ `/about/datenschutz`
 privacy policy statement
 
 ## Deployment
