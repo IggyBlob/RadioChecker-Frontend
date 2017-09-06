@@ -2,3 +2,4 @@
 .vagrant/
 vagrant/vm_build.log
 ubuntu-xenial-16.04-cloudimg-console.log
+frontend/
