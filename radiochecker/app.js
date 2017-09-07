@@ -12,44 +12,47 @@ angular.module('RadioCheckerApp', ['ngRoute', 'ngAnimate'])
             })
 
             .when('/toptracks', {
-                title: 'set in topTracksController',
+                title: 'Meistgespielte Songs \u2014 RadioChecker.com',
                 description: 'set in topTracksController',
                 controller: 'TopTracksController',
                 templateUrl: 'radiochecker/toptracks/topTracksView.html'
             })
 
             .when('/search', {
-                title: 'set in searchController',
+                title: 'Songsuche \u2014 RadioChecker.com',
                 description: 'set in searchController',
                 controller: 'SearchController',
                 templateUrl: 'radiochecker/search/searchView.html'
             })
 
             .when('/about/wtf', {
-                title: 'About RadioChecker \u2014 RadioChecker.com',
+                title: 'Über RadioChecker \u2014 RadioChecker.com',
                 description: 'RadioChecker.com ist ein kostenloser Online-Service, der dir die meistgespielten Songs ' +
                 'deiner Lieblings-Radiosender präsentiert. Erfahre mehr darüber ...',
-                templateUrl: 'radiochecker/meta/aboutView.html'
+                templateUrl: 'radiochecker/about/wtfView.html'
             })
 
-            .when('/about/impressum', {
+            .when('/about/imprint', {
                 title: 'Impressum \u2014 RadioChecker.com',
                 description: 'Impressum und rechtliche Hinweise zu RadioChecker.com.',
-                templateUrl: 'radiochecker/meta/imprintView.html'
+                templateUrl: 'radiochecker/about/imprintView.html'
             })
 
-            .when('/about/datenschutz', {
+            .when('/about/privacy', {
                 title: 'Datenschutz \u2014 RadioChecker.com',
                 description: 'Erfahre mehr über den Datenschutz bei RadioChecker.com.',
-                templateUrl: 'radiochecker/meta/privacyView.html'
+                templateUrl: 'radiochecker/about/privacyView.html'
             })
 
             .otherwise({ redirectTo: '/' });
 
+        // default hash-prefix used for $location hash-bang URLs has changed from the empty string ('') to
+        // the bang ('!') in AngularJS 1.6.0 - resetting it to the previous default
+        $locationProvider.hashPrefix('');
+
         // use the HTML5 History API
         $locationProvider.html5Mode(true);
     })
-
 
     .run(['$rootScope', '$route', '$location', '$window', function($rootScope, $route, $location, $window) {
         // intitialize Google Analytics
@@ -57,6 +60,9 @@ angular.module('RadioCheckerApp', ['ngRoute', 'ngAnimate'])
         $window.ga('set', 'anonymizeIp', true);
 
         $rootScope.$on('$routeChangeSuccess', function() {
+            // scrolls to top of view if route has changed to prevent flickering
+            window.scrollTo(0,0);
+
             document.title = $route.current.title;
             document.head.querySelector("[name=description]").content = $route.current.description;
             document.head.querySelector("[rel=canonical]").href = $location.$$absUrl;

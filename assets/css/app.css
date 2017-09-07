@@ -187,7 +187,7 @@ button.link {
     min-width: 45px;
 }
 
-div.messagebox, div.info-bar {
+div.messagebox, div.info-bar, div.headline {
     font-family: 'Zilla Slab', serif;
     text-align: center;
     color: #424242;
@@ -354,7 +354,15 @@ table.search-results td {
     padding: 5px;
 }
 
+/* about/... */
 
+div.meta-box {
+    background: url(../img/bg-transparent.png) repeat;
+    font-family: 'Raleway', cursive;
+    margin-top: 20px;
+    padding: 10px;
+    text-align: justify;
+}
 
 /* media queries */
 @media only screen and (max-width: 991px) {
