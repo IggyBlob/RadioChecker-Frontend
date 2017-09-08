@@ -73,12 +73,12 @@
                 </p>
                 <p>
                     <span class="highlight highlight-orange">2.</span>
-                    <span class="highlight highlight-default"> Gib das Datum für den gewünschten Zeitraum an</span>
+                    <span class="highlight highlight-default">Gib das gewünschte Datum an</span>
                 </p>
                 <p>
                     <span class="highlight highlight-orange">3.</span>
                     <span class="highlight highlight-default">
-                        Wähle aus, ob du die Statistik für den Tag oder die gesamte Woche sehen möchtest
+                        Hol dir die Statistik für den Tag oder die gesamte Woche
                     </span>
                 </p>
         </div>
@@ -212,7 +212,7 @@
             <img class="img-loading" src="assets/img/radio.svg">
             <p>
                 <span class="highlight highlight-orange">
-                    Empfange Daten für {{ input.radiostationSelected.name }}. Stay tuned ...
+                    Empfange Daten für {{ input.radiostationSelected.name }} ...
                 </span>
             </p>
         </div>
@@ -221,7 +221,8 @@
     <div class="row row-animate spacer-bottom" ng-if="ctrl.connError">
         <div class="col-lg-12 messagebox">
             <p>
-                <i class="fa fa-exclamation-circle fa-5x rc-brand-color" aria-hidden="true"></i>
+                <i class="fa fa-exclamation-circle fa-5x rc-brand-color hidden-xs" aria-hidden="true"></i>
+                <i class="fa fa-exclamation-circle fa-3x rc-brand-color visible-xs" aria-hidden="true"></i>
             </p>
             <p>
                 <span class="highlight highlight-default">

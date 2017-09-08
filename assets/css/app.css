@@ -1,11 +1,7 @@
 /* global */
 
 html {
-    verflow-y: scroll;
-}
-
-body {
-    overflow-y: scroll;
+    overflow-y: scroll !important;
 }
 
 .bg-image {
@@ -24,8 +20,21 @@ div.container {
     position: relative;
 }
 
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 90pt;
+    color: #ffa500;
+    margin-top: 30px;
+    text-shadow: 2px 2px #000;
+}
+
+h4 {
+    font-family: 'Zilla Slab', serif;
+    text-align: center;
+}
+
 div.spacer-bottom {
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
 div.footer {
@@ -45,6 +54,10 @@ div.footer a {
     font-family: 'Raleway', sans-serif;
     font-size: 9pt;
     text-decoration: none;
+}
+
+button.btn-default:hover {
+    background-color: #efbe65 !important;
 }
 
 .left {
@@ -86,7 +99,6 @@ td.middle, th.middle {
     opacity: 1;
 }
 
-
 .row-animate.ng-leave, .track.ng-leave, .tr-animate.ng-leave {
     -webkit-transition: all ease-in 100ms;
     -moz-transition: all ease-in 100ms;
@@ -105,21 +117,13 @@ img.img-loading {
 }
 
 /* startView.html */
-h1 {
-    font-family: 'Pacifico', cursive;
-    font-size: 90pt;
-    color: orange;
-    margin-top: 30px;
-    text-shadow: 2px 2px #000;
-}
-
 a.rc-brand {
     text-decoration: none;
-    color:orange;
+    color: #ffa500;
 }
 
 a.rc-brand:hover {
-    color: orange;
+    color: #ffa500;
 }
 
 div.head {
@@ -133,11 +137,6 @@ img.jack {
 
 img.jack-inline {
     width: 150px;
-}
-
-h4 {
-    font-family: 'Zilla Slab', serif;
-    text-align: center;
 }
 
 .welcome-message {
@@ -177,7 +176,7 @@ button.link {
 }
 
 .go-button {
-    width: 48%;
+    width: 49%;
     text-align: center;
     background-color: #ffa500;
     border: 1px solid #000000;
@@ -191,7 +190,7 @@ div.messagebox, div.info-bar, div.headline {
     font-family: 'Zilla Slab', serif;
     text-align: center;
     color: #424242;
-    font-size: 15pt;
+    font-size: 20pt;
 }
 
 div.messagebox {
@@ -228,10 +227,8 @@ input[type="date"]
     display:block;
     -webkit-appearance: none;
     -moz-appearance: none;
+    line-height: 20px !important;
 }
-
-
-
 
 div.trackbox-header {
     font-family: 'Zilla Slab', cursive;
@@ -295,16 +292,6 @@ div.track-counter .small {
     display: block;
 }
 
-div.track-not-loaded-heading {
-    font-size: 13pt;
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-}
-div.track-not-loaded-text {
-    text-align: center;
-}
-
-
 /* searchView.html */
 div.searchcount-col {
     display: flex;
@@ -332,7 +319,7 @@ table.search-results th {
     font-family: 'Zilla Slab', cursive;
     font-size: 15pt;
     text-align: left;
-    background-color: orange;
+    background-color: #ffa500;
     color: #ffffff;
 }
 
@@ -355,7 +342,6 @@ table.search-results td {
 }
 
 /* about/... */
-
 div.meta-box {
     background: url(../img/bg-transparent.png) repeat;
     font-family: 'Raleway', cursive;
@@ -364,11 +350,34 @@ div.meta-box {
     text-align: justify;
 }
 
+div.link-back {
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+div.link-back a {
+    color: #ffffff !important;
+    font-family: 'Zilla Slab', cursive;
+    font-weight: normal !important;
+}
+
 /* media queries */
+@media only screen and (max-width: 1199px) {
+
+    button.link {
+        font-size: 12pt;
+    }
+}
+
 @media only screen and (max-width: 991px) {
 
     div.sub-bar .col-md-4 .input-group {
         margin-bottom: 5px;
+    }
+
+    button.link {
+        font-size: 8pt;
     }
 
 }
@@ -383,12 +392,30 @@ div.meta-box {
         width: 250px;
     }
 
+    button.link {
+        font-size: 13pt;
+    }
+
 }
 
 @media only screen and (max-width: 530px) {
 
     h1 {
         font-size: 4em;
+    }
+
+    .welcome-message {
+        font-size: 18pt;
+        line-height: 34px;
+    }
+
+    div.messagebox, div.info-bar {
+        font-size: 15pt;
+        margin-top: 30px;
+    }
+
+    div.spacer-bottom {
+        margin-bottom: 40px;
     }
 
     img.jack {
@@ -402,6 +429,14 @@ div.meta-box {
     div.linkbox {
         margin-top: 10px;
     }
+
+    div.head {
+        margin-bottom: 0px;
+    }
+
+    button.link {
+        font-size: 13pt;
+    }
 }
 
 @media only screen and (max-width: 320px) {
@@ -411,7 +446,7 @@ div.meta-box {
     }
 
     div.head, .welcome-message {
-        margin-bottom: 50px;
+        margin-bottom: 10px;
     }
 
     img.jack {
@@ -423,4 +458,7 @@ div.meta-box {
         font-size: 8px;
     }
 
+    div.messagebox {
+        font-size: 13pt;
+    }
 }
