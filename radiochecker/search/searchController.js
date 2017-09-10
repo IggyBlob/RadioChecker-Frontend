@@ -88,10 +88,17 @@ angular.module('RadioCheckerApp')
 
                 searchstringSanitized = $scope.input.searchString.replace(/\s+/g, "+");
 
+                // see https://github.com/angular/angular.js/issues/10450
+                weekNoBugFix = $filter('date')(
+                    new Date($scope.input.date.getFullYear(),
+                        $scope.input.date.getMonth(),
+                        $scope.input.date.getDate()
+                    ), "ww", "UTC");
+
                 $http.get(
                     "http://api.radiochecker.com:8080/search/week" +
                     "/" + $filter('date')($scope.input.date, "yyyy") +
-                    "/" + $filter('date')($scope.input.date, "ww") +
+                    "/" + weekNoBugFix +
                     "/" + searchstringSanitized)
                     .then(function(response) {
                         $scope.data.beginDate = new Date(response.data.beginDate);
