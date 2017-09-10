@@ -448,7 +448,7 @@ div.link-back a {
     }
 
     div.head, .welcome-message {
-        margin-bottom: 10px;
+        margin-bottom: -5px;
     }
 
     img.jack {
@@ -462,5 +462,14 @@ div.link-back a {
 
     div.messagebox {
         font-size: 13pt;
+    }
+
+    button.link {
+        font-size: 10pt;
+        height: 35px !important;
+    }
+
+    .clear-margin-xs {
+        margin-top: 0 !important;
     }
 }
