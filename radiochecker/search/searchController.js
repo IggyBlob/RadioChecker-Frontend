@@ -65,7 +65,7 @@ angular.module('RadioCheckerApp')
                 searchstringSanitized = $scope.input.searchString.replace(/\s+/g, "+");
 
                 $http.get(
-                    "http://localhost:8080/search/day" +
+                    "http://api.radiochecker.com:8080/search/day" +
                     "/" + $filter('date')($scope.input.date, "yyyy-MM-dd") +
                     "/" + searchstringSanitized)
                     .then(function(response) {
@@ -84,17 +84,19 @@ angular.module('RadioCheckerApp')
                 if (!inputValid()) return;
 
                 resetData();
-                $scope.ctrl.isWeekView = false;
+                $scope.ctrl.isWeekView = true;
 
                 searchstringSanitized = $scope.input.searchString.replace(/\s+/g, "+");
 
-                /*
                 $http.get(
-                    "http://localhost:8080/search/day" +
-                    "/" + $filter('date')($scope.input.date, "yyyy-MM-dd") +
+                    "http://api.radiochecker.com:8080/search/week" +
+                    "/" + $filter('date')($scope.input.date, "yyyy") +
+                    "/" + $filter('date')($scope.input.date, "ww") +
                     "/" + searchstringSanitized)
                     .then(function(response) {
-                        $scope.data.beginDate = new Date(response.data.date);
+                        $scope.data.beginDate = new Date(response.data.beginDate);
+                        $scope.data.endDate = new Date(response.data.endDate);
+                        $scope.data.weekNo = response.data.weekNo;
                         $scope.data.radiostations = response.data.stations;
                         $scope.data.searchResult = response.data.results;
                         $timeout(function() { $scope.ctrl.requestFinished = true; }, 4000);
@@ -103,7 +105,6 @@ angular.module('RadioCheckerApp')
                         console.log(data);
                         $scope.ctrl.connError = true;
                     });
-                    */
             };
 
             $scope.checkDate = function () {
