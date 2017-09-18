@@ -445,6 +445,8 @@ div.link-back a {
 
     h1 {
         font-size: 3em;
+        margin-top: 15px;
+        margin-bottom: 0;
     }
 
     div.head, .welcome-message {
@@ -453,6 +455,7 @@ div.link-back a {
 
     img.jack {
         width: 150px;
+        margin-top: 15px;
     }
 
     div.footer, div.footer a {
@@ -464,6 +467,10 @@ div.link-back a {
         font-size: 13pt;
     }
 
+    div.messagebox p {
+        margin-bottom: 5px;
+    }
+
     button.link {
         font-size: 10pt;
         height: 35px !important;
@@ -471,5 +478,9 @@ div.link-back a {
 
     .clear-margin-xs {
         margin-top: 0 !important;
+    }
+
+    div.spacer-bottom {
+        margin-bottom: 20px;
     }
 }
