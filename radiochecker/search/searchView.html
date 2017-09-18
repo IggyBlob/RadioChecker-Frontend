@@ -114,7 +114,7 @@
                                 <div class="title">{{result.track.title | uppercase}}</div>
                                 <div>{{ result.track.artist | uppercase }}</div>
                             </td>
-                            <td class="center middle" ng-repeat="play in result.plays">{{play}} Mal</td>
+                            <td class="center middle" ng-repeat="play in result.plays track by $index">{{play}} Mal</td>
                         </tr>
                     </tbody>
                 </table>
