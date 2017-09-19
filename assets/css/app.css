@@ -36,19 +36,20 @@ h4 {
 }
 
 div.spacer-bottom {
-    margin-bottom: 60px;
+    padding-bottom: 50px;
 }
 
 div.footer {
     position: absolute;
     bottom: 0;
-    height: 40px;
+    height: 50px;
     width: 100%;
     text-align: center;
 }
 
 div.footer div {
     text-align: center;
+    margin-top: 15px;
 }
 
 div.footer a {
@@ -348,6 +349,7 @@ div.meta-box {
     background: url(../img/bg-transparent.png) repeat;
     font-family: 'Raleway', cursive;
     margin-top: 20px;
+    margin-bottom: 5px;
     padding: 10px;
     text-align: justify;
 }
@@ -416,16 +418,8 @@ div.link-back a {
         margin-top: 30px;
     }
 
-    div.spacer-bottom {
-        margin-bottom: 40px;
-    }
-
     img.jack {
         width: 180px;
-    }
-
-    div.footer {
-        height: 30px;
     }
 
     div.linkbox {
@@ -459,8 +453,12 @@ div.link-back a {
     }
 
     div.footer, div.footer a {
-        height: 20px;
+        height: 25px;
         font-size: 8px;
+    }
+
+    div.footer div {
+        margin-top: 5px;
     }
 
     div.messagebox {
@@ -481,6 +479,6 @@ div.link-back a {
     }
 
     div.spacer-bottom {
-        margin-bottom: 20px;
+        padding-bottom: 25px;
     }
 }
