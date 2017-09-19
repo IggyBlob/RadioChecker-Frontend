@@ -418,6 +418,10 @@ div.link-back a {
         margin-top: 30px;
     }
 
+    div.messagebox-no-match {
+        margin-top: 0 !important;
+    }
+
     img.jack {
         width: 180px;
     }
