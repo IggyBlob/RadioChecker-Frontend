@@ -97,14 +97,14 @@
     </div>
 
     <div class="row row-animate spacer-bottom" ng-if="ctrl.requestFinished && !ctrl.connError">
-        <div class="col-xs-12" ng-if="data.searchResult.length > 0">
+        <div class="col-xs-12 visible-lg visible-md" ng-if="data.searchResult.length > 0">
             <div class="table-responsive">
                 <table class="table search-results">
                     <thead>
                         <tr>
-                            <th class="middle"><i class="fa fa-volume-up" aria-hidden="true"></i> &nbsp; Song</th>
+                            <th class="middle">Song</th>
                             <th class="center middle" ng-repeat="radiostation in data.radiostations">
-                                <i class="fa fa-podcast" aria-hidden="true"></i> &nbsp; {{radiostation}}
+                                 {{radiostation}}
                             </th>
                         </tr>
                     </thead>
@@ -118,6 +118,39 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+        </div>
+        <div class="col-xs-12 hidden-lg hidden-md" ng-if="data.searchResult.length > 0">
+            <div class="trackbox-header">
+                <p><strong>Songs</strong></p>
+            </div>
+            <div class="trackbox">
+                <div class="track" ng-repeat="result in data.searchResult" ng-click="collapse = !collapse">
+                    <div class="wrapper">
+                        <div class="track-info">
+                            <div class="title">{{ result.track.title | uppercase }}</div>
+                            <div>{{ result.track.artist | uppercase }}</div>
+                        </div>
+                        <div class="track-counter">
+                            <div class="counter counter-caret" ng-if="!collapse">
+                                <i class="fa fa-caret-down" aria-hidden="true"></i>
+                            </div>
+                            <div class="counter counter-caret" ng-if="collapse">
+                                <i class="fa fa-caret-up" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result-details" ng-show="collapse">
+                        <table class="table">
+                            <tbody>
+                                <tr ng-repeat="radiostation in data.radiostations">
+                                    <td>{{ radiostation }}:</td>
+                                    <td>{{ result.plays[$index] }} Mal</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col-md-12 messagebox messagebox-no-match clear-margin-xs" ng-if="data.searchResult.length == 0">

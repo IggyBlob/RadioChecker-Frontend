@@ -272,7 +272,7 @@ div.track-counter {
 
 div.track-info {
     height: 100%;
-    max-width: 80%;
+    width: 80%;
     display: inline-block;
     vertical-align: middle;
 }
@@ -342,6 +342,22 @@ table.search-results td {
     margin-bottom: 5px;
     font-family: 'Raleway', cursive;
     padding: 5px;
+}
+
+div.counter-caret {
+    line-height: 40px;
+}
+
+div.result-details {
+    margin-top: 5px;
+}
+
+div.result-details table {
+    margin-bottom: 0;
+}
+
+div.result-details table td {
+    border-color: #ccc;
 }
 
 /* about/... */
