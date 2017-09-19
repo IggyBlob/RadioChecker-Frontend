@@ -94,7 +94,7 @@ angular.module('RadioCheckerApp')
                                 case 3: $scope.data.tracks.third.push(track); break;
                             }
                         })
-                        $timeout(function() { $scope.ctrl.requestFinished = true; }, 4000);
+                        $timeout(function() { $scope.ctrl.requestFinished = true; }, 3000);
                     })
                     .catch(function (data) {
                         console.log(data);
@@ -142,7 +142,7 @@ angular.module('RadioCheckerApp')
                                 case 3: $scope.data.tracks.third.push(track); break;
                             }
                         });
-                        $timeout(function() { $scope.ctrl.requestFinished = true; }, 4000);
+                        $timeout(function() { $scope.ctrl.requestFinished = true; }, 3000);
                     })
                     .catch(function (data) {
                         console.log(data);

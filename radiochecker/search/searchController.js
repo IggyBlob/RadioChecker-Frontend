@@ -8,7 +8,7 @@ angular.module('RadioCheckerApp')
                 inputSubmitted: false,
                 requestFinished: false,
                 isWeekView: false,
-                connError: false,
+                connError: false
             };
 
             $scope.input = {
@@ -17,8 +17,8 @@ angular.module('RadioCheckerApp')
                 searchStringSaved: "",
                 error: {
                     searchString: false,
-                    date: false,
-                },
+                    date: false
+                }
             };
 
             $scope.data = {
@@ -26,7 +26,7 @@ angular.module('RadioCheckerApp')
                 weekNo: null,
                 beginDate: null,
                 endDate: null,
-                searchResult: [],
+                searchResult: []
             };
 
             $scope.setDate = function (d) {
@@ -72,7 +72,7 @@ angular.module('RadioCheckerApp')
                         $scope.data.beginDate = new Date(response.data.date);
                         $scope.data.radiostations = response.data.stations;
                         $scope.data.searchResult = response.data.results;
-                        $timeout(function() { $scope.ctrl.requestFinished = true; }, 4000);
+                        $timeout(function() { $scope.ctrl.requestFinished = true; }, 3000);
                     })
                     .catch(function (data) {
                         console.log(data);
@@ -106,7 +106,7 @@ angular.module('RadioCheckerApp')
                         $scope.data.weekNo = response.data.weekNo;
                         $scope.data.radiostations = response.data.stations;
                         $scope.data.searchResult = response.data.results;
-                        $timeout(function() { $scope.ctrl.requestFinished = true; }, 4000);
+                        $timeout(function() { $scope.ctrl.requestFinished = true; }, 3000);
                     })
                     .catch(function (data) {
                         console.log(data);
