@@ -14,6 +14,7 @@ angular.module('RadioCheckerApp')
             $scope.input = {
                 date: new Date(),
                 radiostationSelected: { name: 'Sender auswählen ...', value: '' },
+                radiostationSelectedSave: null,
                 error: {
                     radiostation: true,
                     date: false,
@@ -162,6 +163,7 @@ angular.module('RadioCheckerApp')
                 $scope.ctrl.inputSubmitted = true;
                 $scope.ctrl.requestFinished = false;
 
+                $scope.input.radiostationSelectedSave = $scope.input.radiostationSelected;
                 $scope.data.weekNo = null;
                 $scope.data.beginDate = null;
                 $scope.data.endDate = null;
