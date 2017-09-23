@@ -59,7 +59,7 @@ div.footer a {
     text-decoration: none;
 }
 
-button.btn-default:hover {
+button.go-button:hover, button.link:hover {
     background-color: #efbe65 !important;
 }
 
