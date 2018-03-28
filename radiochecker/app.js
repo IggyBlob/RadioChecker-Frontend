@@ -11,20 +11,6 @@ angular.module('RadioCheckerApp', ['ngRoute', 'ngAnimate'])
                 templateUrl: 'radiochecker/start/startView.html'
             })
 
-            .when('/toptracks', {
-                title: 'Meistgespielte Songs \u2014 RadioChecker.com',
-                description: 'set in topTracksController',
-                controller: 'TopTracksController',
-                templateUrl: 'radiochecker/toptracks/topTracksView.html'
-            })
-
-            .when('/search', {
-                title: 'Songsuche \u2014 RadioChecker.com',
-                description: 'set in searchController',
-                controller: 'SearchController',
-                templateUrl: 'radiochecker/search/searchView.html'
-            })
-
             .when('/about/wtf', {
                 title: 'Über RadioChecker \u2014 RadioChecker.com',
                 description: 'RadioChecker.com ist ein kostenloser Online-Service, der dir die meistgespielten Songs ' +
